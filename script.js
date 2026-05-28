@@ -1,6 +1,7 @@
 const storageKey = "codex-todo-items";
 
-const todoForm = document.querySelector("#todoForm");
+const todoForm = document.querySelector("#todoForm");  
+
 const todoInput = document.querySelector("#todoInput");
 const todoList = document.querySelector("#todoList");
 const todoTemplate = document.querySelector("#todoTemplate");
