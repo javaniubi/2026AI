@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&#20170;&#26085;&#24453;&#21150;</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="todo-app" aria-label="&#24453;&#21150;&#20107;&#39033;&#24212;&#29992;">
+        <header class="app-header">
+          <div>
+            <p class="eyebrow">Todo List</p>
+            <h1>&#20170;&#26085;&#24453;&#21150;</h1>
+          </div>
+          <div class="date-card">
+            <span id="weekday">&#21608;&#22235;</span>
+            <strong id="today">05.28</strong>
+          </div>
+        </header>
+
+        <form class="todo-form" id="todoForm">
+          <label class="visually-hidden" for="todoInput">&#26032;&#22686;&#24453;&#21150;</label>
+          <input
+            id="todoInput"
+            type="text"
+            maxlength="80"
+            autocomplete="off"
+            placeholder="&#20889;&#19979;&#19979;&#19968;&#20214;&#35201;&#23436;&#25104;&#30340;&#20107;"
+          />
+          <button type="submit" aria-label="&#28155;&#21152;&#24453;&#21150;">
+            <span>+</span>
+          </button>
+        </form>
+
+        <div class="toolbar" aria-label="&#31579;&#36873;&#21644;&#32479;&#35745;">
+          <div class="filters" role="tablist" aria-label="&#24453;&#21150;&#31579;&#36873;">
+            <button class="filter active" type="button" data-filter="all">&#20840;&#37096;</button>
+            <button class="filter" type="button" data-filter="active">&#36827;&#34892;&#20013;</button>
+            <button class="filter" type="button" data-filter="done">&#24050;&#23436;&#25104;</button>
+          </div>
+          <p class="counter" id="counter">0 &#39033;</p>
+        </div>
+
+        <ul class="todo-list" id="todoList" aria-live="polite"></ul>
+
+        <section class="empty-state" id="emptyState">
+          <div class="empty-icon" aria-hidden="true">&#10003;</div>
+          <h2>&#28165;&#29245;&#30340;&#19968;&#22825;</h2>
+          <p>&#20808;&#28155;&#21152;&#19968;&#20214;&#23567;&#20107;&#65292;&#35753;&#33410;&#22863;&#24320;&#22987;&#12290;</p>
+        </section>
+
+        <footer class="app-footer">
+          <button class="text-button" id="clearDone" type="button">&#28165;&#38500;&#24050;&#23436;&#25104;</button>
+          <button class="text-button danger" id="clearAll" type="button">&#28165;&#31354;&#20840;&#37096;</button>
+        </footer>
+      </section>
+    </main>
+
+    <template id="todoTemplate">
+      <li class="todo-item">
+        <label class="check-wrap">
+          <input class="todo-check" type="checkbox" />
+          <span class="custom-check"></span>
+        </label>
+        <span class="todo-title"></span>
+        <button class="delete-button" type="button" aria-label="&#21024;&#38500;&#24453;&#21150;">&times;</button>
+      </li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
